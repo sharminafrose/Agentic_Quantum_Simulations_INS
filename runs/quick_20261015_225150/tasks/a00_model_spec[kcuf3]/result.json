@@ -1,0 +1,51 @@
+{
+  "task": "a00_model_spec[kcuf3]",
+  "agent": "a00_model_spec",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 1297976518,
+  "duration_s": 0.235,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {},
+  "summary": {
+    "model": "kcuf3",
+    "n_sites": 8,
+    "jxy": 1.0,
+    "jz": 1.0,
+    "hz": 0.0,
+    "hs": 0.0,
+    "J_meV": 33.5,
+    "source": "preset+config",
+    "llm_applied": false,
+    "evidence_papers": [
+      "2607.07138.pdf",
+      "2610.03671.pdf"
+    ]
+  },
+  "error": null,
+  "artifacts": {
+    "evidence": "tasks/a00_model_spec[kcuf3]/evidence.json",
+    "model": "tasks/a00_model_spec[kcuf3]/model.json",
+    "hamiltonian_terms": "tasks/a00_model_spec[kcuf3]/hamiltonian_terms.json"
+  },
+  "artifact_meta": {
+    "evidence": {
+      "path": "tasks/a00_model_spec[kcuf3]/evidence.json",
+      "sha256": "92ce76b44e4501552c411066cf3ec3c237ae01de9b3554ad99d5dc8e70c19ddd",
+      "bytes": 9860,
+      "format": "json"
+    },
+    "model": {
+      "path": "tasks/a00_model_spec[kcuf3]/model.json",
+      "sha256": "e46554c05ec8d8f42103ea02e75311c02eba94737b86ea203e8b4559a1d12b02",
+      "bytes": 581,
+      "format": "json"
+    },
+    "hamiltonian_terms": {
+      "path": "tasks/a00_model_spec[kcuf3]/hamiltonian_terms.json",
+      "sha256": "193ec6b31feeb07a125134b493cec1186fe3917ef3ef793a6f3bda9afa0d2b72",
+      "bytes": 716,
+      "format": "json"
+    }
+  }
+}

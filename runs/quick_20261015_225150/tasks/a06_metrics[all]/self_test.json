@@ -1,0 +1,62 @@
+[
+  {
+    "check": "mse_identical",
+    "value": 0.0,
+    "pass": true,
+    "expect": "0"
+  },
+  {
+    "check": "ssim_identical",
+    "value": 1.0,
+    "pass": true,
+    "expect": "1"
+  },
+  {
+    "check": "wasserstein_identical",
+    "value": 0.0,
+    "pass": true,
+    "expect": "0"
+  },
+  {
+    "check": "wasserstein_shift_0.3",
+    "value": 0.2967834763503284,
+    "pass": true,
+    "expect": "~0.3 (energy shift)"
+  },
+  {
+    "check": "ssim_noisy_lt_1",
+    "value": 0.34868874450597315,
+    "pass": true,
+    "expect": "< 1"
+  },
+  {
+    "check": "mse_order",
+    "value": 0.07658767297984422,
+    "pass": true,
+    "expect": "shift worse than noise"
+  },
+  {
+    "check": "sum_rule",
+    "value": 0.24999999999999997,
+    "pass": true,
+    "expect": "0.25"
+  },
+  {
+    "check": "nqfi_positive",
+    "value": 0.5085786391354993,
+    "pass": true,
+    "expect": ">= 0"
+  },
+  {
+    "check": "concurrence_heisenberg_nn",
+    "value": 0.3862,
+    "pass": true,
+    "expect": "~0.386 (Bethe-ansatz NN correlations)"
+  },
+  {
+    "check": "concurrence_product",
+    "value": 0.0,
+    "pass": true,
+    "expect": "0"
+  }
+]

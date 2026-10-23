@@ -1,0 +1,73 @@
+{
+  "task": "a09_dsf[kcuf3]",
+  "agent": "a09_dsf",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 870265945,
+  "duration_s": 0.283,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d",
+    "a01_mps_dmrg[kcuf3]": "dd60179fadd6ddd78e6508a0137eba975c9ec7e5fce6a31f105861a2d7417406",
+    "a05_noise_model[kcuf3]": "d50277d5a63fd3b2c606719307069990e2433e45ebc3ee7c16115758cd561ece",
+    "a07_assembly[kcuf3]": "7f63a413e59b295d052fa3e49a9bc164882fdc1384969933d6789027dad65e5f",
+    "a08_hw_execution[kcuf3]": "d4038a827d3463dbd7141ba356191181950de0e30609aac5fb0566359aa4e2c5"
+  },
+  "summary": {
+    "sources": [
+      "mps_reference",
+      "noiseless_circuit",
+      "noisy_p=0.005",
+      "noisy_p=0.001",
+      "hardware(ibm_kingston)"
+    ],
+    "n_q": 60,
+    "n_omega": 60,
+    "omega_max_meV": 175.40558982543013
+  },
+  "error": null,
+  "artifacts": {
+    "rgf_diagnostics": "tasks/a09_dsf[kcuf3]/rgf_diagnostics.json",
+    "dsf": "tasks/a09_dsf[kcuf3]/dsf.npz",
+    "dsf_panels": "tasks/a09_dsf[kcuf3]/dsf_panels.png"
+  },
+  "artifact_meta": {
+    "rgf_diagnostics": {
+      "path": "tasks/a09_dsf[kcuf3]/rgf_diagnostics.json",
+      "sha256": "269d4d3b0874286e293a0764b0afb00ac0371fb6695fe68bda04a58fdacd746c",
+      "bytes": 761,
+      "format": "json"
+    },
+    "dsf": {
+      "path": "tasks/a09_dsf[kcuf3]/dsf.npz",
+      "sha256": "1433a921bd9535bdba6c05100586e0487f39c06d95698a1accb08fb69f34d562",
+      "bytes": 55943,
+      "format": "npz",
+      "shapes": {
+        "q": [
+          60
+        ],
+        "omega": [
+          60
+        ],
+        "omega_meV": [
+          60
+        ],
+        "sources": [
+          5
+        ],
+        "S": [
+          5,
+          60,
+          60
+        ]
+      }
+    },
+    "dsf_panels": {
+      "path": "tasks/a09_dsf[kcuf3]/dsf_panels.png",
+      "sha256": "bae0aaa268662d936bdc7c1437ab35f8a16dca75838f3a9dd3517a93ecb6dc4f",
+      "bytes": 99888,
+      "format": "png"
+    }
+  }
+}

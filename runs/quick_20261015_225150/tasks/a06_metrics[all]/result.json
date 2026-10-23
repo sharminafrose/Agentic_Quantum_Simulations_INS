@@ -1,0 +1,33 @@
+{
+  "task": "a06_metrics[all]",
+  "agent": "a06_metrics",
+  "key": "all",
+  "status": "ok",
+  "seed": 3862251986,
+  "duration_s": 0.223,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {},
+  "summary": {
+    "n_checks": 10,
+    "all_passed": true,
+    "metrics": [
+      "mse",
+      "wasserstein",
+      "ssim",
+      "nqfi",
+      "two_tangle"
+    ]
+  },
+  "error": null,
+  "artifacts": {
+    "self_test": "tasks/a06_metrics[all]/self_test.json"
+  },
+  "artifact_meta": {
+    "self_test": {
+      "path": "tasks/a06_metrics[all]/self_test.json",
+      "sha256": "4e4806b3edcde779f9401ad7130637c28db0b6053483bf9966f110d348678102",
+      "bytes": 1124,
+      "format": "json"
+    }
+  }
+}

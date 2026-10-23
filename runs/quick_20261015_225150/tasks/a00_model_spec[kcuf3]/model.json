@@ -1,0 +1,29 @@
+{
+  "name": "kcuf3",
+  "n_sites": 8,
+  "jxy": 1.0,
+  "jz": 1.0,
+  "hz": 0.0,
+  "hs": 0.0,
+  "energy_scale_meV": 33.5,
+  "material": "KCuF3",
+  "description": "Near-ideal spin-1/2 Heisenberg chain; two-spinon continuum (Bethe ansatz).",
+  "search_terms": [
+    "KCuF3",
+    "Heisenberg chain",
+    "spinon",
+    "Bethe ansatz"
+  ],
+  "references": [
+    "arXiv:2603.15608",
+    "Lake et al., Nat. Mater. 4, 329 (2005)"
+  ],
+  "provenance": {
+    "source": "preset+config",
+    "llm_applied": false,
+    "evidence_papers": [
+      "2607.07138.pdf",
+      "2610.03671.pdf"
+    ]
+  }
+}

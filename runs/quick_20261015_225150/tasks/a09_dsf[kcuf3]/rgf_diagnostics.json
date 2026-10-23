@@ -1,0 +1,27 @@
+{
+  "mps_reference": {
+    "rgf_rms": 0.2810680298353222,
+    "rms_dev_from_reference": 0.0,
+    "reference_rms": 0.2810680298353222
+  },
+  "noiseless_circuit": {
+    "rgf_rms": 0.2992500302109517,
+    "rms_dev_from_reference": 0.04617069283666773,
+    "reference_rms": 0.2810680298353222
+  },
+  "noisy_p=0.005": {
+    "rgf_rms": 0.23797671454717303,
+    "rms_dev_from_reference": 0.06985454029243522,
+    "reference_rms": 0.2810680298353222
+  },
+  "noisy_p=0.001": {
+    "rgf_rms": 0.2955259435875865,
+    "rms_dev_from_reference": 0.05491902836623686,
+    "reference_rms": 0.2810680298353222
+  },
+  "hardware(ibm_kingston)": {
+    "rgf_rms": 0.24920349661411406,
+    "rms_dev_from_reference": 0.05649077290224633,
+    "reference_rms": 0.2810680298353222
+  }
+}

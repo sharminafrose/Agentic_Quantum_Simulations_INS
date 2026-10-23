@@ -1,0 +1,12 @@
+# Small, fast end-to-end smoke run (a few minutes on a laptop CPU).
+run: {name: quick, max_workers: 6}
+system: {n_sites: 8}
+dmrg: {chi_list: [16, 32]}
+dynamics: {n_steps: 6, reference_substeps: 2, ref_max_bond: 64}
+ansatz: {layers: 2, maxiter: 120, sweep: {enabled: true, sizes: [4, 6], layers: [1, 2]}}
+aqc: {aqc_steps: 2, maxiter: 20, max_bond: 32}
+noise: {depolarizing_rates: [5.0e-3, 1.0e-3], shots: 1000}
+execution: {shots: 1000}
+assembly: {max_bond: 64}
+dsf: {n_omega: 60, n_q: 60}
+benchmark: {r_max: 3}

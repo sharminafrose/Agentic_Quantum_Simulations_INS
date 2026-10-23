@@ -1,0 +1,126 @@
+2026-10-16T02:51:50.932+00:00 [run_start] -                            11 tasks {"run_dir": "runs/quick_20261015_225150"}
+2026-10-16T02:51:51.807+00:00 [task_submit] a00_model_spec[kcuf3]         {"deps": []}
+2026-10-16T02:51:51.809+00:00 [task_submit] a04_hw_calibration[ibm_kingston]  {"deps": []}
+2026-10-16T02:51:51.808+00:00 [task_start] a00_model_spec[kcuf3]        Material -> Hamiltonian specification {"seed": 1297976518, "deps": [], "threads": 12}
+2026-10-16T02:51:51.809+00:00 [task_start] a04_hw_calibration[ibm_kingston] Hardware calibration + layout search {"seed": 3680849919, "deps": [], "threads": 12}
+2026-10-16T02:51:51.810+00:00 [task_submit] a06_metrics[all]              {"deps": []}
+2026-10-16T02:51:51.810+00:00 [task_start] a06_metrics[all]             Metric suite (MSE, Wasserstein, SSIM, nQFI, two-tangle) self-test {"seed": 3862251986, "deps": [], "threads": 12}
+2026-10-16T02:51:52.007+00:00 [      log] a04_hw_calibration[ibm_kingston] calibration loaded {"backend": "ibm_kingston", "source": "fake", "timestamp": "2026-04-15 09:15:15+02:00", "n_qubits": 156, "n_couplers": 169, "median_T1_us": 282.8207987984761, "median_T2_us": 144.22948834636003, "median_readout_error": 0.009521484375, "median_sx_error": 0.00023619655980713472, "median_2q_error": 0.0018035033702715197}
+2026-10-16T02:51:52.010+00:00 [ artifact] a04_hw_calibration[ibm_kingston] calibration
+2026-10-16T02:51:52.014+00:00 [ decision] a04_hw_calibration[ibm_kingston] layout {"choice": [147, 148, 149, 150, 151, 152, 153, 154], "reasons": ["best chain_search chain"], "n": 8, "method": "chain_search", "est_layer_fidelity": 0.978873308022857}
+2026-10-16T02:51:52.015+00:00 [ artifact] a04_hw_calibration[ibm_kingston] layouts
+2026-10-16T02:51:52.018+00:00 [ artifact] a04_hw_calibration[ibm_kingston] result
+2026-10-16T02:51:52.023+00:00 [ task_end] a04_hw_calibration[ibm_kingston] ok {"duration_s": 0.208, "summary": {"backend": "ibm_kingston", "calibration": {"backend": "ibm_kingston", "source": "fake", "timestamp": "2026-04-15 09:15:15+02:00", "n_qubits": 156, "n_couplers": 169, "median_T1_us": 282.8207987984761, "median_T2_us": 144.22948834636003, "median_readout_error": 0.009521484375, "median_sx_error": 0.00023619655980713472, "median_2q_error": 0.0018035033702715197}, "la
+2026-10-16T02:51:52.033+00:00 [ artifact] a06_metrics[all]             self_test
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             mse_identical {"value": 0.0, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             ssim_identical {"value": 1.0, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             wasserstein_identical {"value": 0.0, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             wasserstein_shift_0.3 {"value": 0.2967834763503284, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             ssim_noisy_lt_1 {"value": 0.34868874450597315, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             mse_order {"value": 0.07658767297984422, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             sum_rule {"value": 0.24999999999999997, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             nqfi_positive {"value": 0.5085786391354993, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             concurrence_heisenberg_nn {"value": 0.3862, "passed": true}
+2026-10-16T02:51:52.033+00:00 [   metric] a06_metrics[all]             concurrence_product {"value": 0.0, "passed": true}
+2026-10-16T02:51:52.034+00:00 [ artifact] a06_metrics[all]             result
+2026-10-16T02:51:52.034+00:00 [ task_end] a06_metrics[all]             ok {"duration_s": 0.223, "summary": {"n_checks": 10, "all_passed": true, "metrics": ["mse", "wasserstein", "ssim", "nqfi", "two_tangle"]}}
+2026-10-16T02:51:52.041+00:00 [      log] a00_model_spec[kcuf3]        retrieved 6 paper chunks {"n_corpus_chunks": 164, "papers": ["2607.07138.pdf", "2610.03671.pdf"], "terms": ["KCuF3", "Heisenberg chain", "spinon", "Bethe ansatz", "KCuF3"]}
+2026-10-16T02:51:52.042+00:00 [ artifact] a00_model_spec[kcuf3]        evidence
+2026-10-16T02:51:52.042+00:00 [ decision] a00_model_spec[kcuf3]        apply_llm_parameters {"choice": false, "reasons": ["LLM disabled"]}
+2026-10-16T02:51:52.042+00:00 [ artifact] a00_model_spec[kcuf3]        model
+2026-10-16T02:51:52.043+00:00 [ artifact] a00_model_spec[kcuf3]        hamiltonian_terms
+2026-10-16T02:51:52.043+00:00 [ artifact] a00_model_spec[kcuf3]        result
+2026-10-16T02:51:52.043+00:00 [ task_end] a00_model_spec[kcuf3]        ok {"duration_s": 0.235, "summary": {"model": "kcuf3", "n_sites": 8, "jxy": 1.0, "jz": 1.0, "hz": 0.0, "hs": 0.0, "J_meV": 33.5, "source": "preset+config", "llm_applied": false, "evidence_papers": ["2607.07138.pdf", "2610.03671.pdf"]}}
+2026-10-16T02:51:52.044+00:00 [task_submit] a01_mps_dmrg[kcuf3]           {"deps": ["a00_model_spec[kcuf3]"]}
+2026-10-16T02:51:52.044+00:00 [task_submit] a02_gs_ansatz[kcuf3]          {"deps": ["a00_model_spec[kcuf3]"]}
+2026-10-16T02:51:52.044+00:00 [task_start] a01_mps_dmrg[kcuf3]          Classical MPS/DMRG ground state + reference dynamics {"seed": 2194534614, "deps": ["a00_model_spec[kcuf3]"], "threads": 12}
+2026-10-16T02:51:52.045+00:00 [task_start] a02_gs_ansatz[kcuf3]         Ground-state ansatz (VQE / HVA) {"seed": 1674868470, "deps": ["a00_model_spec[kcuf3]"], "threads": 12}
+2026-10-16T02:51:52.154+00:00 [   metric] a01_mps_dmrg[kcuf3]          dmrg_energy {"value": -3.374932598687888, "chi": 16, "max_bond_reached": 16, "wall_s": 0.108}
+2026-10-16T02:51:52.407+00:00 [   metric] a01_mps_dmrg[kcuf3]          dmrg_energy {"value": -3.3749325986878924, "chi": 32, "max_bond_reached": 16, "wall_s": 0.231}
+2026-10-16T02:51:52.412+00:00 [ decision] a01_mps_dmrg[kcuf3]          converged_chi {"choice": 16, "reasons": "|E(chi) - E(chi_max)| < 1e-06"}
+2026-10-16T02:51:52.417+00:00 [ artifact] a01_mps_dmrg[kcuf3]          chi_convergence
+2026-10-16T02:51:52.517+00:00 [   metric] a01_mps_dmrg[kcuf3]          dmrg_minus_exact {"value": 5.329070518200751e-15, "exact_energy": -3.3749325986878977}
+2026-10-16T02:51:52.615+00:00 [ artifact] a01_mps_dmrg[kcuf3]          static_correlations
+2026-10-16T02:51:53.099+00:00 [ artifact] a01_mps_dmrg[kcuf3]          reference_rgf
+2026-10-16T02:51:53.101+00:00 [      log] a01_mps_dmrg[kcuf3]          reference dynamics done {"substeps": 2, "kick_signs": [1, -1], "max_bond_used": 16}
+2026-10-16T02:51:53.103+00:00 [ artifact] a01_mps_dmrg[kcuf3]          result
+2026-10-16T02:51:53.105+00:00 [ task_end] a01_mps_dmrg[kcuf3]          ok {"duration_s": 1.057, "summary": {"ground_energy": -3.3749325986878924, "exact_energy": -3.3749325986878977, "converged_chi": 16, "chi_list": [16, 32], "reference_max_bond_used": 16, "kick_signs": [1, -1]}}
+2026-10-16T02:51:53.232+00:00 [   metric] a02_gs_ansatz[kcuf3]         vqe_energy {"value": -3.317901435727525, "init": "singlet", "layers": 2, "n_evals": 149}
+2026-10-16T02:51:53.435+00:00 [   metric] a02_gs_ansatz[kcuf3]         vqe_energy {"value": -2.007602121942602, "init": "neel", "layers": 2, "n_evals": 78}
+2026-10-16T02:51:53.435+00:00 [ decision] a02_gs_ansatz[kcuf3]         initial_state_branch {"choice": "singlet", "reasons": {"singlet": -3.317901435727525, "neel": -2.007602121942602}, "criterion": "lowest VQE energy"}
+2026-10-16T02:51:53.442+00:00 [   metric] a02_gs_ansatz[kcuf3]         fidelity_vs_exact {"value": 0.9574119212078241}
+2026-10-16T02:51:53.480+00:00 [ decision] a02_gs_ansatz[kcuf3]         kick_signs {"choice": [1], "reasons": {"max_abs_z": 2.1649348980190592e-15, "has_field": false}, "criterion": "two signs unless the state is spin-flip symmetric (<Z_j> = 0)"}
+2026-10-16T02:51:53.481+00:00 [ artifact] a02_gs_ansatz[kcuf3]         ground_state_circuit
+2026-10-16T02:51:53.481+00:00 [ artifact] a02_gs_ansatz[kcuf3]         branches
+2026-10-16T02:51:53.586+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.9999999999999765, "n_sites": 4, "layers": 1, "init": "singlet"}
+2026-10-16T02:51:53.692+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.3110026882367618, "n_sites": 4, "layers": 1, "init": "neel"}
+2026-10-16T02:51:53.841+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.9999999999999993, "n_sites": 4, "layers": 2, "init": "singlet"}
+2026-10-16T02:51:53.981+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.3333333333333329, "n_sites": 4, "layers": 2, "init": "neel"}
+2026-10-16T02:51:54.084+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.9717346223898032, "n_sites": 6, "layers": 1, "init": "singlet"}
+2026-10-16T02:51:54.200+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.20195517054228834, "n_sites": 6, "layers": 1, "init": "neel"}
+2026-10-16T02:51:54.416+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.9913875079498565, "n_sites": 6, "layers": 2, "init": "singlet"}
+2026-10-16T02:51:54.589+00:00 [   metric] a02_gs_ansatz[kcuf3]         sweep_fidelity {"value": 0.21550273304740236, "n_sites": 6, "layers": 2, "init": "neel"}
+2026-10-16T02:51:54.589+00:00 [ artifact] a02_gs_ansatz[kcuf3]         fidelity_sweep
+2026-10-16T02:51:54.599+00:00 [ artifact] a02_gs_ansatz[kcuf3]         result
+2026-10-16T02:51:54.599+00:00 [ task_end] a02_gs_ansatz[kcuf3]         ok {"duration_s": 2.553, "summary": {"best_init": "singlet", "layers": 2, "energy": -3.317901435727525, "exact_energy": -3.374932598687885, "fidelity_vs_exact": 0.9574119212078241, "max_abs_z": 2.1649348980190592e-15, "kick_signs": [1], "optimizer": "COBYQA", "circuit_stats": {"n_qubits": 8, "depth": 64, "depth_2q": 25, "n_2q": 88, "n_1q": 222, "n_params": 0}}}
+2026-10-16T02:51:54.599+00:00 [task_submit] a03_aqc[kcuf3]                {"deps": ["a00_model_spec[kcuf3]", "a02_gs_ansatz[kcuf3]"]}
+2026-10-16T02:51:54.600+00:00 [task_start] a03_aqc[kcuf3]               Approximate quantum compilation (tensor network) {"seed": 3725971599, "deps": ["a00_model_spec[kcuf3]", "a02_gs_ansatz[kcuf3]"], "threads": 12}
+2026-10-16T02:51:54.617+00:00 [      log] a03_aqc[kcuf3]               AQC ansatz generated {"sign": 1, "n_params": 241, "ansatz_depth": 15}
+2026-10-16T02:51:57.830+00:00 [   metric] a03_aqc[kcuf3]               aqc_fidelity {"value": 0.9999918937846815, "sign": 1, "step": 1, "n_iter": 0}
+2026-10-16T02:52:00.900+00:00 [   metric] a03_aqc[kcuf3]               aqc_fidelity {"value": 0.9967853673733771, "sign": 1, "step": 2, "n_iter": 20}
+2026-10-16T02:52:00.909+00:00 [ artifact] a03_aqc[kcuf3]               aqc_circuits
+2026-10-16T02:52:00.910+00:00 [ artifact] a03_aqc[kcuf3]               aqc_steps
+2026-10-16T02:52:00.976+00:00 [ artifact] a03_aqc[kcuf3]               result
+2026-10-16T02:52:00.977+00:00 [ task_end] a03_aqc[kcuf3]               ok {"duration_s": 6.374, "summary": {"enabled": true, "aqc_steps": 2, "kick_signs": [1], "ansatz_steps": 1, "n_params": 241, "fidelities": [0.9999918937846815, 0.9967853673733771], "aqc_stats": {"n_qubits": 8, "depth": 117, "depth_2q": 21, "n_2q": 75, "n_1q": 515, "n_params": 0}, "target_stats_last": {"n_qubits": 8, "depth": 154, "depth_2q": 61, "n_2q": 220, "n_1q": 552, "n_params": 0}}}
+2026-10-16T02:52:00.977+00:00 [task_submit] a07_assembly[kcuf3]           {"deps": ["a00_model_spec[kcuf3]", "a02_gs_ansatz[kcuf3]", "a03_aqc[kcuf3]"]}
+2026-10-16T02:52:00.978+00:00 [task_start] a07_assembly[kcuf3]          Circuit assembly (GS + AQC + Trotter tail) {"seed": 542112130, "deps": ["a00_model_spec[kcuf3]", "a02_gs_ansatz[kcuf3]", "a03_aqc[kcuf3]"], "threads": 12}
+2026-10-16T02:52:01.173+00:00 [ artifact] a07_assembly[kcuf3]          circuits
+2026-10-16T02:52:01.174+00:00 [ artifact] a07_assembly[kcuf3]          circuit_stats
+2026-10-16T02:52:01.174+00:00 [ decision] a07_assembly[kcuf3]          assembly_plan {"choice": ["gs+kick", "aqc[1]", "aqc[2]", "aqc[2]+trotter[1]", "aqc[2]+trotter[2]", "aqc[2]+trotter[3]", "aqc[2]+trotter[4]"], "reasons": "2 AQC steps, 4 Trotter-tail steps, 1 kick sign(s)", "kick_signs": [1]}
+2026-10-16T02:52:01.655+00:00 [ artifact] a07_assembly[kcuf3]          noiseless_rgf
+2026-10-16T02:52:01.655+00:00 [ artifact] a07_assembly[kcuf3]          result
+2026-10-16T02:52:01.655+00:00 [ task_end] a07_assembly[kcuf3]          ok {"duration_s": 0.677, "summary": {"n_circuits": 7, "kick_signs": [1], "aqc_steps": 2, "last_step_n_2q": 339, "last_step_depth_2q": 93, "full_trotter_n_2q": 484, "noiseless_sim": true}}
+2026-10-16T02:52:01.656+00:00 [task_submit] a05_noise_model[kcuf3]        {"deps": ["a00_model_spec[kcuf3]", "a07_assembly[kcuf3]"]}
+2026-10-16T02:52:01.657+00:00 [task_start] a05_noise_model[kcuf3]       Depolarising-channel MPS simulation sweep {"seed": 3926328085, "deps": ["a00_model_spec[kcuf3]", "a07_assembly[kcuf3]"], "threads": 12}
+2026-10-16T02:52:01.657+00:00 [task_submit] a08_hw_execution[kcuf3]       {"deps": ["a00_model_spec[kcuf3]", "a07_assembly[kcuf3]", "a04_hw_calibration[ibm_kingston]"]}
+2026-10-16T02:52:01.659+00:00 [task_start] a08_hw_execution[kcuf3]      Quantum hardware execution (PT / DD / TREX / ZNE) {"seed": 2618844279, "deps": ["a00_model_spec[kcuf3]", "a04_hw_calibration[ibm_kingston]", "a07_assembly[kcuf3]"], "threads": 12}
+2026-10-16T02:52:01.694+00:00 [ decision] a08_hw_execution[kcuf3]      backend {"choice": "ibm_kingston", "reasons": {"ibm_kingston": 0.97887}, "criterion": "highest estimated chain layer fidelity"}
+2026-10-16T02:52:05.980+00:00 [   metric] a05_noise_model[kcuf3]       noisy_center_signal {"value": 0.27666666666666667, "p": 0.005}
+2026-10-16T02:52:08.887+00:00 [   metric] a05_noise_model[kcuf3]       noisy_center_signal {"value": 0.32233333333333336, "p": 0.001}
+2026-10-16T02:52:08.938+00:00 [ artifact] a05_noise_model[kcuf3]       noisy_rgf
+2026-10-16T02:52:08.946+00:00 [ artifact] a05_noise_model[kcuf3]       result
+2026-10-16T02:52:08.948+00:00 [ task_end] a05_noise_model[kcuf3]       ok {"duration_s": 7.284, "summary": {"rates": [0.005, 0.001], "shots": 1000, "n_circuits": 7, "max_n_2q": 159}}
+2026-10-16T02:52:09.705+00:00 [ decision] a08_hw_execution[kcuf3]      mitigation {"choice": {"trex": true, "dd": true, "dd_sequence": "XY4", "twirling": true, "zne": true, "zne_extrapolator": "exponential"}, "reasons": ["TREX on: mean readout error 0.0080 vs threshold 0.005", "DD on (XY4): idle fraction 0.34, depth 197", "Pauli twirling on: 159 two-qubit gates", "ZNE on: estimated circuit fidelity 0.698 (useful range 0.05-0.7)"], "policy": "rules", "features": {"n_qubits": 8, 
+2026-10-16T02:52:09.706+00:00 [ artifact] a08_hw_execution[kcuf3]      mitigation
+2026-10-16T02:52:12.358+00:00 [  warning] a08_hw_execution[kcuf3]      mitigation selected but not emulated locally {"techniques": ["dd", "twirling", "zne"]}
+2026-10-16T02:52:12.359+00:00 [ artifact] a08_hw_execution[kcuf3]      hardware_rgf
+2026-10-16T02:52:12.359+00:00 [ artifact] a08_hw_execution[kcuf3]      execution
+2026-10-16T02:52:12.360+00:00 [ artifact] a08_hw_execution[kcuf3]      result
+2026-10-16T02:52:12.360+00:00 [ task_end] a08_hw_execution[kcuf3]      ok {"duration_s": 10.7, "summary": {"mode": "local_emulator", "backend": "ibm_kingston", "chain": [147, 148, 149, 150, 151, 152, 153, 154], "shots": 1000, "applied_mitigation": ["readout_inversion(TREX-emulated)"], "not_emulated": ["dd", "twirling", "zne"], "executed": true, "mitigation": {"trex": true, "dd": true, "dd_sequence": "XY4", "twirling": true, "zne": true, "zne_extrapolator": "exponential"
+2026-10-16T02:52:12.360+00:00 [task_submit] a09_dsf[kcuf3]                {"deps": ["a00_model_spec[kcuf3]", "a01_mps_dmrg[kcuf3]", "a05_noise_model[kcuf3]", "a07_assembly[kcuf3]", "a08_hw_execution[kcuf3]"]}
+2026-10-16T02:52:12.361+00:00 [task_start] a09_dsf[kcuf3]               DSF reconstruction (Fourier transform of RGF) {"seed": 870265945, "deps": ["a00_model_spec[kcuf3]", "a01_mps_dmrg[kcuf3]", "a05_noise_model[kcuf3]", "a07_assembly[kcuf3]", "a08_hw_execution[kcuf3]"], "threads": 12}
+2026-10-16T02:52:12.366+00:00 [   metric] a09_dsf[kcuf3]               rgf_signal {"value": 0.2810680298353222, "source": "mps_reference", "rms_dev_from_reference": 0.0}
+2026-10-16T02:52:12.367+00:00 [   metric] a09_dsf[kcuf3]               rgf_signal {"value": 0.2992500302109517, "source": "noiseless_circuit", "rms_dev_from_reference": 0.04617069283666773}
+2026-10-16T02:52:12.367+00:00 [   metric] a09_dsf[kcuf3]               rgf_signal {"value": 0.23797671454717303, "source": "noisy_p=0.005", "rms_dev_from_reference": 0.06985454029243522}
+2026-10-16T02:52:12.367+00:00 [   metric] a09_dsf[kcuf3]               rgf_signal {"value": 0.2955259435875865, "source": "noisy_p=0.001", "rms_dev_from_reference": 0.05491902836623686}
+2026-10-16T02:52:12.367+00:00 [   metric] a09_dsf[kcuf3]               rgf_signal {"value": 0.24920349661411406, "source": "hardware(ibm_kingston)", "rms_dev_from_reference": 0.05649077290224633}
+2026-10-16T02:52:12.367+00:00 [ artifact] a09_dsf[kcuf3]               rgf_diagnostics
+2026-10-16T02:52:12.372+00:00 [ artifact] a09_dsf[kcuf3]               dsf
+2026-10-16T02:52:12.644+00:00 [ artifact] a09_dsf[kcuf3]               dsf_panels
+2026-10-16T02:52:12.644+00:00 [ decision] a09_dsf[kcuf3]               dsf_estimator {"choice": "centre-site FT", "reasons": {"window": "none", "broadening_meV": 0.0}}
+2026-10-16T02:52:12.644+00:00 [ artifact] a09_dsf[kcuf3]               result
+2026-10-16T02:52:12.644+00:00 [ task_end] a09_dsf[kcuf3]               ok {"duration_s": 0.283, "summary": {"sources": ["mps_reference", "noiseless_circuit", "noisy_p=0.005", "noisy_p=0.001", "hardware(ibm_kingston)"], "n_q": 60, "n_omega": 60, "omega_max_meV": 175.40558982543013}}
+2026-10-16T02:52:12.645+00:00 [task_submit] a10_benchmark[kcuf3]          {"deps": ["a00_model_spec[kcuf3]", "a01_mps_dmrg[kcuf3]", "a06_metrics[all]", "a09_dsf[kcuf3]"]}
+2026-10-16T02:52:12.645+00:00 [task_start] a10_benchmark[kcuf3]         Benchmarking vs MPS reference and INS experiment {"seed": 3550709294, "deps": ["a00_model_spec[kcuf3]", "a01_mps_dmrg[kcuf3]", "a06_metrics[all]", "a09_dsf[kcuf3]"], "threads": 12}
+2026-10-16T02:52:12.647+00:00 [   metric] a10_benchmark[kcuf3]         two_tangle_dmrg_exact {"value": 0.31452138788773176}
+2026-10-16T02:52:12.649+00:00 [   metric] a10_benchmark[kcuf3]         vs_mps {"value": 0.0, "source": "mps_reference", "wasserstein": 0.0, "ssim": 1.0}
+2026-10-16T02:52:12.651+00:00 [   metric] a10_benchmark[kcuf3]         vs_mps {"value": 0.00027886013540234995, "source": "noiseless_circuit", "wasserstein": 0.0715411396701011, "ssim": 0.9653177733760726}
+2026-10-16T02:52:12.654+00:00 [   metric] a10_benchmark[kcuf3]         vs_mps {"value": 0.00037422321663168684, "source": "noisy_p=0.005", "wasserstein": 0.22879586439031988, "ssim": 0.878254176582512}
+2026-10-16T02:52:12.656+00:00 [   metric] a10_benchmark[kcuf3]         vs_mps {"value": 0.0004089982853567518, "source": "noisy_p=0.001", "wasserstein": 0.16114114170690474, "ssim": 0.9094854867679176}
+2026-10-16T02:52:12.658+00:00 [   metric] a10_benchmark[kcuf3]         vs_mps {"value": 0.00021039168938666753, "source": "hardware(ibm_kingston)", "wasserstein": 0.19195655738576373, "ssim": 0.8985406167415694}
+2026-10-16T02:52:12.658+00:00 [  warning] a10_benchmark[kcuf3]         no experimental INS data; comparing to MPS reference only {"expected_path": "data/ins/kcuf3.npz"}
+2026-10-16T02:52:12.658+00:00 [ artifact] a10_benchmark[kcuf3]         metrics
+2026-10-16T02:52:12.889+00:00 [ artifact] a10_benchmark[kcuf3]         metrics_csv
+2026-10-16T02:52:12.889+00:00 [ artifact] a10_benchmark[kcuf3]         result
+2026-10-16T02:52:12.889+00:00 [ task_end] a10_benchmark[kcuf3]         ok {"duration_s": 0.244, "summary": {"n_rows": 5, "has_experiment": false, "two_tangle_dmrg": 0.31452138788773176, "hardware_vs_mps": {"mse": 0.00021039168938666753, "wasserstein": 0.19195655738576373, "ssim": 0.8985406167415694}}}
+2026-10-16T02:52:12.899+00:00 [  run_end] -                            {"ok": 11} {"wall_s": 21.96}

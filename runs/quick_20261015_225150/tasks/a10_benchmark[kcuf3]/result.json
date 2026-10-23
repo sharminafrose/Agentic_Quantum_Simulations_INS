@@ -1,0 +1,44 @@
+{
+  "task": "a10_benchmark[kcuf3]",
+  "agent": "a10_benchmark",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 3550709294,
+  "duration_s": 0.244,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d",
+    "a01_mps_dmrg[kcuf3]": "dd60179fadd6ddd78e6508a0137eba975c9ec7e5fce6a31f105861a2d7417406",
+    "a06_metrics[all]": "ed3c3dde57c69798a553d636e813f374ec366ad719ab7afeba4281b78a14d8fc",
+    "a09_dsf[kcuf3]": "eaaa45519f0c3b247c5b614c43b19d5fe1c24d00417af46d6febf853fbc68ae3"
+  },
+  "summary": {
+    "n_rows": 5,
+    "has_experiment": false,
+    "two_tangle_dmrg": 0.31452138788773176,
+    "hardware_vs_mps": {
+      "mse": 0.00021039168938666753,
+      "wasserstein": 0.19195655738576373,
+      "ssim": 0.8985406167415694
+    }
+  },
+  "error": null,
+  "artifacts": {
+    "metrics": "tasks/a10_benchmark[kcuf3]/metrics.json",
+    "metrics_csv": "tasks/a10_benchmark[kcuf3]/metrics.csv"
+  },
+  "artifact_meta": {
+    "metrics": {
+      "path": "tasks/a10_benchmark[kcuf3]/metrics.json",
+      "sha256": "ce5d7620ef15e8150e6cdf5285d270d005930acb3bcecc7d466223dd04eb1f33",
+      "bytes": 1708,
+      "format": "json"
+    },
+    "metrics_csv": {
+      "path": "tasks/a10_benchmark[kcuf3]/metrics.csv",
+      "sha256": "8c42b7cfeb5008932d78cb10477c96151b0a69903ff293015196599d1cde3e73",
+      "bytes": 908,
+      "format": "csv"
+    }
+  }
+}

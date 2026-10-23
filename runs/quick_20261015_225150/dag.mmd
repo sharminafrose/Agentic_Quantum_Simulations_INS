@@ -1,0 +1,33 @@
+flowchart LR
+  t0["a00_model_spec[kcuf3]"]
+  t1["a01_mps_dmrg[kcuf3]"]
+  t2["a02_gs_ansatz[kcuf3]"]
+  t3["a03_aqc[kcuf3]"]
+  t4["a04_hw_calibration[ibm_kingston]"]
+  t5["a05_noise_model[kcuf3]"]
+  t6["a06_metrics[all]"]
+  t7["a07_assembly[kcuf3]"]
+  t8["a08_hw_execution[kcuf3]"]
+  t9["a09_dsf[kcuf3]"]
+  t10["a10_benchmark[kcuf3]"]
+  t0 --> t1
+  t0 --> t2
+  t0 --> t3
+  t2 --> t3
+  t0 --> t5
+  t7 --> t5
+  t0 --> t7
+  t2 --> t7
+  t3 --> t7
+  t0 --> t8
+  t7 --> t8
+  t4 --> t8
+  t0 --> t9
+  t1 --> t9
+  t5 --> t9
+  t7 --> t9
+  t8 --> t9
+  t0 --> t10
+  t1 --> t10
+  t6 --> t10
+  t9 --> t10

@@ -1,0 +1,62 @@
+{
+  "task": "a03_aqc[kcuf3]",
+  "agent": "a03_aqc",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 3725971599,
+  "duration_s": 6.374,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d",
+    "a02_gs_ansatz[kcuf3]": "19704993f895ff0392ce06838dccb0ce8d15bda96f4af4fe645f16b4e39cc850"
+  },
+  "summary": {
+    "enabled": true,
+    "aqc_steps": 2,
+    "kick_signs": [
+      1
+    ],
+    "ansatz_steps": 1,
+    "n_params": 241,
+    "fidelities": [
+      0.9999918937846815,
+      0.9967853673733771
+    ],
+    "aqc_stats": {
+      "n_qubits": 8,
+      "depth": 117,
+      "depth_2q": 21,
+      "n_2q": 75,
+      "n_1q": 515,
+      "n_params": 0
+    },
+    "target_stats_last": {
+      "n_qubits": 8,
+      "depth": 154,
+      "depth_2q": 61,
+      "n_2q": 220,
+      "n_1q": 552,
+      "n_params": 0
+    }
+  },
+  "error": null,
+  "artifacts": {
+    "aqc_circuits": "tasks/a03_aqc[kcuf3]/aqc_circuits.qpy",
+    "aqc_steps": "tasks/a03_aqc[kcuf3]/aqc_steps.json"
+  },
+  "artifact_meta": {
+    "aqc_circuits": {
+      "path": "tasks/a03_aqc[kcuf3]/aqc_circuits.qpy",
+      "sha256": "d15535920e56589c61596c6bdcbf5dd802bded804971b49ca2eeb9ded7d7a28d",
+      "bytes": 93448,
+      "format": "qpy",
+      "n_circuits": 2
+    },
+    "aqc_steps": {
+      "path": "tasks/a03_aqc[kcuf3]/aqc_steps.json",
+      "sha256": "c5156a377e802d98e7c0d4b47bb1cf23859ce69bce3f0ceedeb48338e55f6f82",
+      "bytes": 13043,
+      "format": "json"
+    }
+  }
+}

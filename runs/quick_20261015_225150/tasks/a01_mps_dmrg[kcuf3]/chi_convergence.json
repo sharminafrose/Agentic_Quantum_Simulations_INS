@@ -1,0 +1,30 @@
+[
+  {
+    "chi": 16,
+    "energy": -3.374932598687888,
+    "converged": true,
+    "max_bond_reached": 16,
+    "n_sweeps": 2,
+    "sweep_energies": [
+      -3.3749325986822534,
+      -3.374932598687888
+    ],
+    "wall_s": 0.108,
+    "energy_per_site": -0.421866574835986,
+    "delta_E_vs_max_chi": 4.440892098500626e-15
+  },
+  {
+    "chi": 32,
+    "energy": -3.3749325986878924,
+    "converged": true,
+    "max_bond_reached": 16,
+    "n_sweeps": 2,
+    "sweep_energies": [
+      -3.3749325986876393,
+      -3.3749325986878924
+    ],
+    "wall_s": 0.231,
+    "energy_per_site": -0.42186657483598655,
+    "delta_E_vs_max_chi": 0.0
+  }
+]

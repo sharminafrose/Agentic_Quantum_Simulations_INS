@@ -1,0 +1,86 @@
+{
+  "task": "a08_hw_execution[kcuf3]",
+  "agent": "a08_hw_execution",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 2618844279,
+  "duration_s": 10.7,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d",
+    "a07_assembly[kcuf3]": "7f63a413e59b295d052fa3e49a9bc164882fdc1384969933d6789027dad65e5f",
+    "a04_hw_calibration[ibm_kingston]": "4bd6f1b594a9786ce8088711831cf7c9ec57c9a68da5fa50083034439e64e5b4"
+  },
+  "summary": {
+    "mode": "local_emulator",
+    "backend": "ibm_kingston",
+    "chain": [
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154
+    ],
+    "shots": 1000,
+    "applied_mitigation": [
+      "readout_inversion(TREX-emulated)"
+    ],
+    "not_emulated": [
+      "dd",
+      "twirling",
+      "zne"
+    ],
+    "executed": true,
+    "mitigation": {
+      "trex": true,
+      "dd": true,
+      "dd_sequence": "XY4",
+      "twirling": true,
+      "zne": true,
+      "zne_extrapolator": "exponential"
+    },
+    "policy": "rules"
+  },
+  "error": null,
+  "artifacts": {
+    "mitigation": "tasks/a08_hw_execution[kcuf3]/mitigation.json",
+    "hardware_rgf": "tasks/a08_hw_execution[kcuf3]/hardware_rgf.npz",
+    "execution": "tasks/a08_hw_execution[kcuf3]/execution.json"
+  },
+  "artifact_meta": {
+    "mitigation": {
+      "path": "tasks/a08_hw_execution[kcuf3]/mitigation.json",
+      "sha256": "fa13f6788cd384fad2597d9d5b2d25d0174e4f1013056d372a37812af448e6f9",
+      "bytes": 883,
+      "format": "json"
+    },
+    "hardware_rgf": {
+      "path": "tasks/a08_hw_execution[kcuf3]/hardware_rgf.npz",
+      "sha256": "5d4c766ccb62117d56f331d88be996c92f84f35ee46c399583d75031dce2270e",
+      "bytes": 1604,
+      "format": "npz",
+      "shapes": {
+        "rgf": [
+          6,
+          8
+        ],
+        "z": [
+          1,
+          7,
+          8
+        ],
+        "dt": [],
+        "center": []
+      }
+    },
+    "execution": {
+      "path": "tasks/a08_hw_execution[kcuf3]/execution.json",
+      "sha256": "750c678e2fabc2ec4f36c174932c3e4c69cbc998db30d1143cc1819e192d42d7",
+      "bytes": 296,
+      "format": "json"
+    }
+  }
+}

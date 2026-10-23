@@ -1,0 +1,5 @@
+# Real-device run (requires `QiskitRuntimeService.save_account(...)` beforehand).
+run: {name: ibm_hardware}
+system: {n_sites: 50}
+hardware: {calibration_source: ibm, layer_fidelity_rb: false}
+execution: {mode: ibm, backend: auto, mitigation: {policy: rules}}

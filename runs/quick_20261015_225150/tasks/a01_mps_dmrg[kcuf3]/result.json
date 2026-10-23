@@ -1,0 +1,68 @@
+{
+  "task": "a01_mps_dmrg[kcuf3]",
+  "agent": "a01_mps_dmrg",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 2194534614,
+  "duration_s": 1.057,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d"
+  },
+  "summary": {
+    "ground_energy": -3.3749325986878924,
+    "exact_energy": -3.3749325986878977,
+    "converged_chi": 16,
+    "chi_list": [
+      16,
+      32
+    ],
+    "reference_max_bond_used": 16,
+    "kick_signs": [
+      1,
+      -1
+    ]
+  },
+  "error": null,
+  "artifacts": {
+    "chi_convergence": "tasks/a01_mps_dmrg[kcuf3]/chi_convergence.json",
+    "static_correlations": "tasks/a01_mps_dmrg[kcuf3]/static_correlations.json",
+    "reference_rgf": "tasks/a01_mps_dmrg[kcuf3]/reference_rgf.npz"
+  },
+  "artifact_meta": {
+    "chi_convergence": {
+      "path": "tasks/a01_mps_dmrg[kcuf3]/chi_convergence.json",
+      "sha256": "57d7166043c54e79ec2ef9001f809e9bdd27fddfc5f7a1ce3e5f0e8274da1131",
+      "bytes": 634,
+      "format": "json"
+    },
+    "static_correlations": {
+      "path": "tasks/a01_mps_dmrg[kcuf3]/static_correlations.json",
+      "sha256": "13452a6c074f4c8d1337d8f219d6f2e6f192b859c3f371ae8ce1646a45fb3f95",
+      "bytes": 309,
+      "format": "json"
+    },
+    "reference_rgf": {
+      "path": "tasks/a01_mps_dmrg[kcuf3]/reference_rgf.npz",
+      "sha256": "d93005541cf28717676706db2437b03a45e79050e3eb91272c1fa657a2c21d06",
+      "bytes": 2082,
+      "format": "npz",
+      "shapes": {
+        "rgf": [
+          6,
+          8
+        ],
+        "z": [
+          2,
+          7,
+          8
+        ],
+        "signs": [
+          2
+        ],
+        "dt": [],
+        "center": []
+      }
+    }
+  }
+}

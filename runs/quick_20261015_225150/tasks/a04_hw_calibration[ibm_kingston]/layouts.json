@@ -1,0 +1,25 @@
+{
+  "8": {
+    "chain": [
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154
+    ],
+    "method": "chain_search",
+    "notes": [],
+    "score": {
+      "log_fidelity": -0.04814840088377051,
+      "est_layer_fidelity": 0.978873308022857,
+      "est_eplg": 0.0030457884896889498,
+      "mean_2q_error": 0.0022618137896379792,
+      "max_2q_error": 0.003756057543117447,
+      "mean_readout_error": 0.008026123046875
+    },
+    "vendor_layer_fidelity_same_length": []
+  }
+}

@@ -1,0 +1,119 @@
+# Full four-model benchmark. Every key can be overridden from the CLI:
+#   qins run -c configs/default.yaml -s system.n_sites=20 -s execution.mode=ibm
+
+run:
+  name: four_model_benchmark
+  out_dir: runs
+  seed: 12345
+  executor: thread          # thread | process  (process = true CPU parallelism)
+  max_workers: 6
+  threads_per_task: null    # BLAS/Aer threads per task (null = cpu_count / max_workers)
+  agents: all               # or a list, e.g. [a00_model_spec, a01_mps_dmrg, a06_metrics]
+  resume: null              # path of an earlier run dir -> reuse its finished tasks
+
+models: [xx, kcuf3, two_soliton, cscox3]
+
+system:
+  n_sites: 20               # default chain length for every model
+
+model_overrides: {}         # e.g. {kcuf3: {n_sites: 50}, cscox3: {hs: 0.08}}
+
+llm:                        # vLLM OpenAI-compatible server (scripts/serve_vllm.sh)
+  enabled: false
+  base_url: http://localhost:8000/v1
+  model: muse-glimmer-30b   # served by scripts/serve_muse.sh (any OpenAI-compatible model works)
+  reasoning: low            # Muse-Glimmer "Reasoning strength" (low | medium | high); null = omit
+  interpret_results: true   # a10 asks the LLM for a short written interpretation of the metrics
+  api_key: null
+  temperature: 0.0
+  max_tokens: 1024
+  timeout_s: 120
+  seed: 0
+
+model_spec:                 # agent a00
+  use_papers: true
+  papers_dir: Papers
+  top_k_chunks: 6
+  accept_llm: false         # true -> LLM-proposed parameters replace presets
+
+dmrg:                       # agent a01
+  chi_list: [16, 32, 64, 128, 256]
+  cutoff: 1.0e-10
+  max_sweeps: 20
+  tol: 1.0e-9
+  conv_tol: 1.0e-6
+
+dynamics:
+  dt: 0.6
+  n_steps: 12
+  trotter_order: 2
+  reference_substeps: 4     # a01 reference uses dt / substeps
+  ref_max_bond: 256
+  symmetry_tol: 1.0e-3      # max|<Z_j>| above which both kick signs are used
+
+ansatz:                     # agent a02
+  layers: 3
+  inits: [singlet, neel]
+  optimizer: COBYQA
+  maxiter: 300
+  max_bond: 64
+  sweep:                    # Fig. S2: fidelity vs size and layers (exact diag, small n)
+    enabled: true
+    sizes: [4, 6, 8, 10, 12]
+    layers: [1, 2, 3, 4, 5]
+
+aqc:                        # agent a03
+  enabled: true
+  aqc_steps: 6
+  ansatz_steps: 1
+  max_bond: 64
+  cutoff: 1.0e-8
+  maxiter: 100
+  autodiff_backend: jax
+
+hardware:                   # agent a04
+  backends: [ibm_kingston, ibm_boston, ibm_pittsburgh]
+  calibration_source: fake  # fake | json | ibm
+  calibration_dir: /home/pza/intern/sangram/HardwareAwarenessIntegrationPipeline/hardware_data
+  layout_method: chain_search   # chain_search | qiskit_default | sangram | mapomatic
+  sangram_path: /home/pza/intern/sangram/HardwareAwarenessIntegrationPipeline
+  beam_width: 256
+  compare_layout_methods: true
+  layer_fidelity_rb: false  # live layer-fidelity RB (needs calibration_source=ibm + qiskit-experiments)
+
+noise:                      # agent a05
+  depolarizing_rates: [7.5e-3, 5.0e-3, 2.5e-3, 1.0e-3]
+  one_qubit_ratio: 0.1
+  shots: 4000
+  method: matrix_product_state
+
+assembly:                   # agent a07
+  noiseless_sim: true
+  max_bond: 128
+
+execution:                  # agent a08
+  mode: local_emulator      # local_emulator | ibm | dry_run
+  backend: auto             # auto = best calibrated chain across hardware.backends
+  shots: 4000
+  optimization_level: 2
+  twirling: {num_randomizations: 1000, shots_per_randomization: 128}
+  mitigation:
+    policy: rules           # rules | llm
+    force: null             # e.g. {dd: true, twirling: true, trex: true, zne: false}
+    thresholds:
+      trex_readout: 0.005
+      dd_idle: 0.2
+      dd_long_depth: 400
+      zne_min_fidelity: 0.05
+      zne_max_fidelity: 0.7
+  ibm: {instance: null, job_tags: [qins]}
+
+dsf:                        # agent a09
+  n_omega: 100
+  n_q: 100
+  window: none              # none | hann | gaussian
+  broadening_meV: 0.0
+
+benchmark:                  # agent a10
+  experiment_dir: data/ins  # <model>.npz with q, omega_meV, S
+  r_max: 6

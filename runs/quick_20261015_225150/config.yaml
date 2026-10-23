@@ -1,0 +1,116 @@
+run:
+  name: quick
+  out_dir: runs
+  seed: 12345
+  executor: thread
+  max_workers: 6
+  threads_per_task: null
+  agents: all
+  resume: null
+models:
+- kcuf3
+system:
+  n_sites: 8
+model_overrides: {}
+llm:
+  enabled: false
+  base_url: http://localhost:8000/v1
+  model: meta-llama/Llama-3.1-8B-Instruct
+  api_key: null
+  temperature: 0.0
+  max_tokens: 1024
+  timeout_s: 120
+  seed: 0
+model_spec:
+  use_papers: true
+  papers_dir: Papers
+  top_k_chunks: 6
+  accept_llm: false
+dmrg:
+  chi_list:
+  - 16
+  - 32
+  cutoff: 1.0e-10
+  max_sweeps: 20
+  tol: 1.0e-09
+  conv_tol: 1.0e-06
+dynamics:
+  dt: 0.6
+  n_steps: 6
+  trotter_order: 2
+  reference_substeps: 2
+  ref_max_bond: 64
+  symmetry_tol: 0.001
+ansatz:
+  layers: 2
+  inits:
+  - singlet
+  - neel
+  optimizer: COBYQA
+  maxiter: 120
+  max_bond: 64
+  sweep:
+    enabled: true
+    sizes:
+    - 4
+    - 6
+    layers:
+    - 1
+    - 2
+aqc:
+  enabled: true
+  aqc_steps: 2
+  ansatz_steps: 1
+  max_bond: 32
+  cutoff: 1.0e-08
+  maxiter: 20
+  autodiff_backend: jax
+hardware:
+  backends:
+  - ibm_kingston
+  calibration_source: fake
+  calibration_dir: /home/pza/intern/sangram/HardwareAwarenessIntegrationPipeline/hardware_data
+  layout_method: chain_search
+  sangram_path: /home/pza/intern/sangram/HardwareAwarenessIntegrationPipeline
+  beam_width: 256
+  compare_layout_methods: true
+  layer_fidelity_rb: false
+noise:
+  depolarizing_rates:
+  - 0.005
+  - 0.001
+  one_qubit_ratio: 0.1
+  shots: 1000
+  method: matrix_product_state
+assembly:
+  noiseless_sim: true
+  max_bond: 64
+execution:
+  mode: local_emulator
+  backend: auto
+  shots: 1000
+  optimization_level: 2
+  twirling:
+    num_randomizations: 1000
+    shots_per_randomization: 128
+  mitigation:
+    policy: rules
+    force: null
+    thresholds:
+      trex_readout: 0.005
+      dd_idle: 0.2
+      dd_long_depth: 400
+      zne_min_fidelity: 0.05
+      zne_max_fidelity: 0.7
+  ibm:
+    instance: null
+    job_tags:
+    - qins
+dsf:
+  n_omega: 60
+  n_q: 60
+  window: none
+  broadening_meV: 0.0
+benchmark:
+  experiment_dir: data/ins
+  r_max: 3

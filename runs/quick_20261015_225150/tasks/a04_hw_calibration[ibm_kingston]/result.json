@@ -1,0 +1,61 @@
+{
+  "task": "a04_hw_calibration[ibm_kingston]",
+  "agent": "a04_hw_calibration",
+  "key": "ibm_kingston",
+  "status": "ok",
+  "seed": 3680849919,
+  "duration_s": 0.208,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {},
+  "summary": {
+    "backend": "ibm_kingston",
+    "calibration": {
+      "backend": "ibm_kingston",
+      "source": "fake",
+      "timestamp": "2026-04-15 09:15:15+02:00",
+      "n_qubits": 156,
+      "n_couplers": 169,
+      "median_T1_us": 282.8207987984761,
+      "median_T2_us": 144.22948834636003,
+      "median_readout_error": 0.009521484375,
+      "median_sx_error": 0.00023619655980713472,
+      "median_2q_error": 0.0018035033702715197
+    },
+    "layouts": {
+      "8": {
+        "chain": [
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154
+        ],
+        "method": "chain_search",
+        "est_layer_fidelity": 0.978873308022857,
+        "log_fidelity": -0.04814840088377051
+      }
+    }
+  },
+  "error": null,
+  "artifacts": {
+    "calibration": "tasks/a04_hw_calibration[ibm_kingston]/calibration.json",
+    "layouts": "tasks/a04_hw_calibration[ibm_kingston]/layouts.json"
+  },
+  "artifact_meta": {
+    "calibration": {
+      "path": "tasks/a04_hw_calibration[ibm_kingston]/calibration.json",
+      "sha256": "9cddf1267d2d9e73c542856b01a4d57521aa2971794d411998e3b6b215b8c2c3",
+      "bytes": 39671,
+      "format": "json"
+    },
+    "layouts": {
+      "path": "tasks/a04_hw_calibration[ibm_kingston]/layouts.json",
+      "sha256": "7de806a4529c65db6db8d8481865a943f20848106097a4cd00f7140de8b3aca2",
+      "bytes": 506,
+      "format": "json"
+    }
+  }
+}

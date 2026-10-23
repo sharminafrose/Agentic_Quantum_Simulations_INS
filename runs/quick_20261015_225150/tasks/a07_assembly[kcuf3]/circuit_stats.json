@@ -1,0 +1,94 @@
+{
+  "per_circuit": [
+    {
+      "n_qubits": 8,
+      "depth": 65,
+      "depth_2q": 25,
+      "n_2q": 88,
+      "n_1q": 223,
+      "n_params": 0,
+      "sign": 1,
+      "t": 0,
+      "plan": "gs+kick"
+    },
+    {
+      "n_qubits": 8,
+      "depth": 98,
+      "depth_2q": 21,
+      "n_2q": 75,
+      "n_1q": 335,
+      "n_params": 0,
+      "sign": 1,
+      "t": 1,
+      "plan": "aqc[1]"
+    },
+    {
+      "n_qubits": 8,
+      "depth": 117,
+      "depth_2q": 21,
+      "n_2q": 75,
+      "n_1q": 515,
+      "n_params": 0,
+      "sign": 1,
+      "t": 2,
+      "plan": "aqc[2]"
+    },
+    {
+      "n_qubits": 8,
+      "depth": 159,
+      "depth_2q": 39,
+      "n_2q": 141,
+      "n_1q": 656,
+      "n_params": 0,
+      "sign": 1,
+      "t": 3,
+      "plan": "aqc[2]+trotter[1]"
+    },
+    {
+      "n_qubits": 8,
+      "depth": 204,
+      "depth_2q": 57,
+      "n_2q": 207,
+      "n_1q": 821,
+      "n_params": 0,
+      "sign": 1,
+      "t": 4,
+      "plan": "aqc[2]+trotter[2]"
+    },
+    {
+      "n_qubits": 8,
+      "depth": 249,
+      "depth_2q": 75,
+      "n_2q": 273,
+      "n_1q": 986,
+      "n_params": 0,
+      "sign": 1,
+      "t": 5,
+      "plan": "aqc[2]+trotter[3]"
+    },
+    {
+      "n_qubits": 8,
+      "depth": 294,
+      "depth_2q": 93,
+      "n_2q": 339,
+      "n_1q": 1151,
+      "n_params": 0,
+      "sign": 1,
+      "t": 6,
+      "plan": "aqc[2]+trotter[4]"
+    }
+  ],
+  "full_trotter_last_step": {
+    "n_qubits": 8,
+    "depth": 334,
+    "depth_2q": 133,
+    "n_2q": 484,
+    "n_1q": 1212,
+    "n_params": 0
+  },
+  "signs": [
+    1
+  ],
+  "n_steps": 6,
+  "order": "sign-major"
+}

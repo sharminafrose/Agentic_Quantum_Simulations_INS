@@ -1,0 +1,59 @@
+{
+  "task": "a02_gs_ansatz[kcuf3]",
+  "agent": "a02_gs_ansatz",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 1674868470,
+  "duration_s": 2.553,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d"
+  },
+  "summary": {
+    "best_init": "singlet",
+    "layers": 2,
+    "energy": -3.317901435727525,
+    "exact_energy": -3.374932598687885,
+    "fidelity_vs_exact": 0.9574119212078241,
+    "max_abs_z": 2.1649348980190592e-15,
+    "kick_signs": [
+      1
+    ],
+    "optimizer": "COBYQA",
+    "circuit_stats": {
+      "n_qubits": 8,
+      "depth": 64,
+      "depth_2q": 25,
+      "n_2q": 88,
+      "n_1q": 222,
+      "n_params": 0
+    }
+  },
+  "error": null,
+  "artifacts": {
+    "ground_state_circuit": "tasks/a02_gs_ansatz[kcuf3]/ground_state_circuit.qpy",
+    "branches": "tasks/a02_gs_ansatz[kcuf3]/branches.json",
+    "fidelity_sweep": "tasks/a02_gs_ansatz[kcuf3]/fidelity_sweep.json"
+  },
+  "artifact_meta": {
+    "ground_state_circuit": {
+      "path": "tasks/a02_gs_ansatz[kcuf3]/ground_state_circuit.qpy",
+      "sha256": "6e5c9086136d8aba67cca0c3656222fa645c318b2da6c87c43dbc70bb4bc6cef",
+      "bytes": 3726,
+      "format": "qpy",
+      "n_circuits": 1
+    },
+    "branches": {
+      "path": "tasks/a02_gs_ansatz[kcuf3]/branches.json",
+      "sha256": "679b604cc712004d95437506811f92209335b644ad81a50d195e62a6d378f2d2",
+      "bytes": 6746,
+      "format": "json"
+    },
+    "fidelity_sweep": {
+      "path": "tasks/a02_gs_ansatz[kcuf3]/fidelity_sweep.json",
+      "sha256": "c97531f6e48a8a32ad9fc66198762e395666b85557fd29979d358a5302a02b7c",
+      "bytes": 1562,
+      "format": "json"
+    }
+  }
+}

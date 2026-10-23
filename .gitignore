@@ -1,0 +1,37 @@
+# --- environments and caches (rebuild with: uv venv --python 3.12 && uv pip install -e ".[ui,dev,notebook]") ---
+.venv/
+.venv-vllm/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- secrets ---
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# --- scratch and session logs ---
+temp/
+.claude/logs/
+.claude/settings.local.json
+.streamlit/secrets.toml
+
+# --- runs: ignore every local run, keep ONE reference run so a clone can be checked against it ---
+runs/*
+!runs/quick_20261015_225150/
+runs/quick_20261015_225150/ui_subprocess.log
+
+# --- papers are tracked; only the regenerable extracted-text cache is ignored ---
+Papers/.cache/
+
+# --- INS data ---
+data/ins/*
+!data/ins/README.md
+
+# --- large binaries not needed to run or check the code ---
+*.pptx

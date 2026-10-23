@@ -1,0 +1,36 @@
+{
+  "features": {
+    "n_qubits": 8,
+    "max_n_2q": 159,
+    "max_depth": 197,
+    "max_depth_2q": 45,
+    "idle_fraction": 0.3439,
+    "est_circuit_fidelity": 0.697651410341413,
+    "mean_2q_error": 0.0022618137896379792,
+    "mean_readout_error": 0.008026123046875
+  },
+  "choice": {
+    "trex": true,
+    "dd": true,
+    "dd_sequence": "XY4",
+    "twirling": true,
+    "zne": true,
+    "zne_extrapolator": "exponential"
+  },
+  "reasons": [
+    "TREX on: mean readout error 0.0080 vs threshold 0.005",
+    "DD on (XY4): idle fraction 0.34, depth 197",
+    "Pauli twirling on: 159 two-qubit gates",
+    "ZNE on: estimated circuit fidelity 0.698 (useful range 0.05-0.7)"
+  ],
+  "policy_used": "rules",
+  "rule_choice": {
+    "trex": true,
+    "dd": true,
+    "dd_sequence": "XY4",
+    "twirling": true,
+    "zne": true,
+    "zne_extrapolator": "exponential"
+  },
+  "llm_raw": null
+}

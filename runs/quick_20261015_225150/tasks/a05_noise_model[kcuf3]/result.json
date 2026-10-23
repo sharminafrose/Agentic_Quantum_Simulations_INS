@@ -1,0 +1,52 @@
+{
+  "task": "a05_noise_model[kcuf3]",
+  "agent": "a05_noise_model",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 3926328085,
+  "duration_s": 7.284,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d",
+    "a07_assembly[kcuf3]": "7f63a413e59b295d052fa3e49a9bc164882fdc1384969933d6789027dad65e5f"
+  },
+  "summary": {
+    "rates": [
+      0.005,
+      0.001
+    ],
+    "shots": 1000,
+    "n_circuits": 7,
+    "max_n_2q": 159
+  },
+  "error": null,
+  "artifacts": {
+    "noisy_rgf": "tasks/a05_noise_model[kcuf3]/noisy_rgf.npz"
+  },
+  "artifact_meta": {
+    "noisy_rgf": {
+      "path": "tasks/a05_noise_model[kcuf3]/noisy_rgf.npz",
+      "sha256": "b5ee9172eac4d0d5d36d38c0dae4602851c08f9a0042d14e4a44e1fc2d883d7f",
+      "bytes": 1995,
+      "format": "npz",
+      "shapes": {
+        "rgf": [
+          2,
+          6,
+          8
+        ],
+        "z": [
+          2,
+          1,
+          7,
+          8
+        ],
+        "rates": [
+          2
+        ],
+        "dt": [],
+        "center": []
+      }
+    }
+  }
+}

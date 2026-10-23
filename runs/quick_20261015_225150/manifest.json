@@ -1,0 +1,391 @@
+{
+  "history": [],
+  "run_id": "quick_20261015_225150",
+  "started": "2026-10-15T22:51:50.916728",
+  "config": {
+    "run": {
+      "name": "quick",
+      "out_dir": "runs",
+      "seed": 12345,
+      "executor": "thread",
+      "max_workers": 6,
+      "threads_per_task": null,
+      "agents": "all",
+      "resume": null
+    },
+    "models": [
+      "kcuf3"
+    ],
+    "system": {
+      "n_sites": 8
+    },
+    "model_overrides": {},
+    "llm": {
+      "enabled": false,
+      "base_url": "http://localhost:8000/v1",
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "api_key": null,
+      "temperature": 0.0,
+      "max_tokens": 1024,
+      "timeout_s": 120,
+      "seed": 0
+    },
+    "model_spec": {
+      "use_papers": true,
+      "papers_dir": "Papers",
+      "top_k_chunks": 6,
+      "accept_llm": false
+    },
+    "dmrg": {
+      "chi_list": [
+        16,
+        32
+      ],
+      "cutoff": 1e-10,
+      "max_sweeps": 20,
+      "tol": 1e-09,
+      "conv_tol": 1e-06
+    },
+    "dynamics": {
+      "dt": 0.6,
+      "n_steps": 6,
+      "trotter_order": 2,
+      "reference_substeps": 2,
+      "ref_max_bond": 64,
+      "symmetry_tol": 0.001
+    },
+    "ansatz": {
+      "layers": 2,
+      "inits": [
+        "singlet",
+        "neel"
+      ],
+      "optimizer": "COBYQA",
+      "maxiter": 120,
+      "max_bond": 64,
+      "sweep": {
+        "enabled": true,
+        "sizes": [
+          4,
+          6
+        ],
+        "layers": [
+          1,
+          2
+        ]
+      }
+    },
+    "aqc": {
+      "enabled": true,
+      "aqc_steps": 2,
+      "ansatz_steps": 1,
+      "max_bond": 32,
+      "cutoff": 1e-08,
+      "maxiter": 20,
+      "autodiff_backend": "jax"
+    },
+    "hardware": {
+      "backends": [
+        "ibm_kingston"
+      ],
+      "calibration_source": "fake",
+      "calibration_dir": "/home/pza/intern/sangram/HardwareAwarenessIntegrationPipeline/hardware_data",
+      "layout_method": "chain_search",
+      "sangram_path": "/home/pza/intern/sangram/HardwareAwarenessIntegrationPipeline",
+      "beam_width": 256,
+      "compare_layout_methods": true,
+      "layer_fidelity_rb": false
+    },
+    "noise": {
+      "depolarizing_rates": [
+        0.005,
+        0.001
+      ],
+      "one_qubit_ratio": 0.1,
+      "shots": 1000,
+      "method": "matrix_product_state"
+    },
+    "assembly": {
+      "noiseless_sim": true,
+      "max_bond": 64
+    },
+    "execution": {
+      "mode": "local_emulator",
+      "backend": "auto",
+      "shots": 1000,
+      "optimization_level": 2,
+      "twirling": {
+        "num_randomizations": 1000,
+        "shots_per_randomization": 128
+      },
+      "mitigation": {
+        "policy": "rules",
+        "force": null,
+        "thresholds": {
+          "trex_readout": 0.005,
+          "dd_idle": 0.2,
+          "dd_long_depth": 400,
+          "zne_min_fidelity": 0.05,
+          "zne_max_fidelity": 0.7
+        }
+      },
+      "ibm": {
+        "instance": null,
+        "job_tags": [
+          "qins"
+        ]
+      }
+    },
+    "dsf": {
+      "n_omega": 60,
+      "n_q": 60,
+      "window": "none",
+      "broadening_meV": 0.0
+    },
+    "benchmark": {
+      "experiment_dir": "data/ins",
+      "r_max": 3
+    }
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-6.17.0-1032-oem-x86_64-with-glibc2.39",
+    "hostname": "pc0143857",
+    "cpu_count": 72,
+    "argv": [
+      ".venv/bin/qins",
+      "run",
+      "-c",
+      "quick",
+      "-s",
+      "models=[kcuf3]",
+      "-s",
+      "hardware.backends=[ibm_kingston]"
+    ],
+    "packages": {
+      "qins": "0.1.0",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "qiskit": "2.5.2",
+      "qiskit-aer": "0.17.2",
+      "qiskit-ibm-runtime": "0.50.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-aqc-tensor": "0.3.1",
+      "qiskit-quimb": "0.0.10",
+      "jax": "0.11.2",
+      "omegaconf": "2.4.0",
+      "streamlit": "1.66.0"
+    }
+  },
+  "inputs": {
+    "Papers/2610.03671.pdf": "a0cbab4bc108e69e5615525b7e41384e1be64046315bf9ef7f13f4c78a1bb624",
+    "Papers/2607.07138.pdf": "3cdb99c2a4772b90861450e6b6c6b04c55bf2461226ed2001b13f57cf883bbcb"
+  },
+  "tasks": {
+    "a00_model_spec[kcuf3]": {
+      "agent": "a00_model_spec",
+      "key": "kcuf3",
+      "deps": [],
+      "title": "Material -> Hamiltonian specification"
+    },
+    "a01_mps_dmrg[kcuf3]": {
+      "agent": "a01_mps_dmrg",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]"
+      ],
+      "title": "Classical MPS/DMRG ground state + reference dynamics"
+    },
+    "a02_gs_ansatz[kcuf3]": {
+      "agent": "a02_gs_ansatz",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]"
+      ],
+      "title": "Ground-state ansatz (VQE / HVA)"
+    },
+    "a03_aqc[kcuf3]": {
+      "agent": "a03_aqc",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]",
+        "a02_gs_ansatz[kcuf3]"
+      ],
+      "title": "Approximate quantum compilation (tensor network)"
+    },
+    "a04_hw_calibration[ibm_kingston]": {
+      "agent": "a04_hw_calibration",
+      "key": "ibm_kingston",
+      "deps": [],
+      "title": "Hardware calibration + layout search"
+    },
+    "a05_noise_model[kcuf3]": {
+      "agent": "a05_noise_model",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]",
+        "a07_assembly[kcuf3]"
+      ],
+      "title": "Depolarising-channel MPS simulation sweep"
+    },
+    "a06_metrics[all]": {
+      "agent": "a06_metrics",
+      "key": "all",
+      "deps": [],
+      "title": "Metric suite (MSE, Wasserstein, SSIM, nQFI, two-tangle) self-test"
+    },
+    "a07_assembly[kcuf3]": {
+      "agent": "a07_assembly",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]",
+        "a02_gs_ansatz[kcuf3]",
+        "a03_aqc[kcuf3]"
+      ],
+      "title": "Circuit assembly (GS + AQC + Trotter tail)"
+    },
+    "a08_hw_execution[kcuf3]": {
+      "agent": "a08_hw_execution",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]",
+        "a07_assembly[kcuf3]",
+        "a04_hw_calibration[ibm_kingston]"
+      ],
+      "title": "Quantum hardware execution (PT / DD / TREX / ZNE)"
+    },
+    "a09_dsf[kcuf3]": {
+      "agent": "a09_dsf",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]",
+        "a01_mps_dmrg[kcuf3]",
+        "a05_noise_model[kcuf3]",
+        "a07_assembly[kcuf3]",
+        "a08_hw_execution[kcuf3]"
+      ],
+      "title": "DSF reconstruction (Fourier transform of RGF)"
+    },
+    "a10_benchmark[kcuf3]": {
+      "agent": "a10_benchmark",
+      "key": "kcuf3",
+      "deps": [
+        "a00_model_spec[kcuf3]",
+        "a01_mps_dmrg[kcuf3]",
+        "a06_metrics[all]",
+        "a09_dsf[kcuf3]"
+      ],
+      "title": "Benchmarking vs MPS reference and INS experiment"
+    }
+  },
+  "finished": "2026-10-15T22:52:12.890861",
+  "wall_s": 21.96,
+  "status": {
+    "ok": 11
+  },
+  "task_results": {
+    "a04_hw_calibration[ibm_kingston]": {
+      "status": "ok",
+      "duration_s": 0.208,
+      "seed": 3680849919,
+      "artifacts": {
+        "calibration": "tasks/a04_hw_calibration[ibm_kingston]/calibration.json",
+        "layouts": "tasks/a04_hw_calibration[ibm_kingston]/layouts.json"
+      }
+    },
+    "a06_metrics[all]": {
+      "status": "ok",
+      "duration_s": 0.223,
+      "seed": 3862251986,
+      "artifacts": {
+        "self_test": "tasks/a06_metrics[all]/self_test.json"
+      }
+    },
+    "a00_model_spec[kcuf3]": {
+      "status": "ok",
+      "duration_s": 0.235,
+      "seed": 1297976518,
+      "artifacts": {
+        "evidence": "tasks/a00_model_spec[kcuf3]/evidence.json",
+        "model": "tasks/a00_model_spec[kcuf3]/model.json",
+        "hamiltonian_terms": "tasks/a00_model_spec[kcuf3]/hamiltonian_terms.json"
+      }
+    },
+    "a01_mps_dmrg[kcuf3]": {
+      "status": "ok",
+      "duration_s": 1.057,
+      "seed": 2194534614,
+      "artifacts": {
+        "chi_convergence": "tasks/a01_mps_dmrg[kcuf3]/chi_convergence.json",
+        "static_correlations": "tasks/a01_mps_dmrg[kcuf3]/static_correlations.json",
+        "reference_rgf": "tasks/a01_mps_dmrg[kcuf3]/reference_rgf.npz"
+      }
+    },
+    "a02_gs_ansatz[kcuf3]": {
+      "status": "ok",
+      "duration_s": 2.553,
+      "seed": 1674868470,
+      "artifacts": {
+        "ground_state_circuit": "tasks/a02_gs_ansatz[kcuf3]/ground_state_circuit.qpy",
+        "branches": "tasks/a02_gs_ansatz[kcuf3]/branches.json",
+        "fidelity_sweep": "tasks/a02_gs_ansatz[kcuf3]/fidelity_sweep.json"
+      }
+    },
+    "a03_aqc[kcuf3]": {
+      "status": "ok",
+      "duration_s": 6.374,
+      "seed": 3725971599,
+      "artifacts": {
+        "aqc_circuits": "tasks/a03_aqc[kcuf3]/aqc_circuits.qpy",
+        "aqc_steps": "tasks/a03_aqc[kcuf3]/aqc_steps.json"
+      }
+    },
+    "a07_assembly[kcuf3]": {
+      "status": "ok",
+      "duration_s": 0.677,
+      "seed": 542112130,
+      "artifacts": {
+        "circuits": "tasks/a07_assembly[kcuf3]/circuits.qpy",
+        "circuit_stats": "tasks/a07_assembly[kcuf3]/circuit_stats.json",
+        "noiseless_rgf": "tasks/a07_assembly[kcuf3]/noiseless_rgf.npz"
+      }
+    },
+    "a05_noise_model[kcuf3]": {
+      "status": "ok",
+      "duration_s": 7.284,
+      "seed": 3926328085,
+      "artifacts": {
+        "noisy_rgf": "tasks/a05_noise_model[kcuf3]/noisy_rgf.npz"
+      }
+    },
+    "a08_hw_execution[kcuf3]": {
+      "status": "ok",
+      "duration_s": 10.7,
+      "seed": 2618844279,
+      "artifacts": {
+        "mitigation": "tasks/a08_hw_execution[kcuf3]/mitigation.json",
+        "hardware_rgf": "tasks/a08_hw_execution[kcuf3]/hardware_rgf.npz",
+        "execution": "tasks/a08_hw_execution[kcuf3]/execution.json"
+      }
+    },
+    "a09_dsf[kcuf3]": {
+      "status": "ok",
+      "duration_s": 0.283,
+      "seed": 870265945,
+      "artifacts": {
+        "rgf_diagnostics": "tasks/a09_dsf[kcuf3]/rgf_diagnostics.json",
+        "dsf": "tasks/a09_dsf[kcuf3]/dsf.npz",
+        "dsf_panels": "tasks/a09_dsf[kcuf3]/dsf_panels.png"
+      }
+    },
+    "a10_benchmark[kcuf3]": {
+      "status": "ok",
+      "duration_s": 0.244,
+      "seed": 3550709294,
+      "artifacts": {
+        "metrics": "tasks/a10_benchmark[kcuf3]/metrics.json",
+        "metrics_csv": "tasks/a10_benchmark[kcuf3]/metrics.csv"
+      }
+    }
+  }
+}

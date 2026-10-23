@@ -1,0 +1,65 @@
+{
+  "task": "a07_assembly[kcuf3]",
+  "agent": "a07_assembly",
+  "key": "kcuf3",
+  "status": "ok",
+  "seed": 542112130,
+  "duration_s": 0.677,
+  "config_hash": "41da1c200d01f2d6",
+  "upstream_hashes": {
+    "a00_model_spec[kcuf3]": "b5fa183e72bd22b9905fe9a863ceb70ea8f65bcaba0c82a0d567e17b9533681d",
+    "a02_gs_ansatz[kcuf3]": "19704993f895ff0392ce06838dccb0ce8d15bda96f4af4fe645f16b4e39cc850",
+    "a03_aqc[kcuf3]": "b47272318325ec498e65e9f472c1db96cb0e00af8328d6ad0abb11d28e77901a"
+  },
+  "summary": {
+    "n_circuits": 7,
+    "kick_signs": [
+      1
+    ],
+    "aqc_steps": 2,
+    "last_step_n_2q": 339,
+    "last_step_depth_2q": 93,
+    "full_trotter_n_2q": 484,
+    "noiseless_sim": true
+  },
+  "error": null,
+  "artifacts": {
+    "circuits": "tasks/a07_assembly[kcuf3]/circuits.qpy",
+    "circuit_stats": "tasks/a07_assembly[kcuf3]/circuit_stats.json",
+    "noiseless_rgf": "tasks/a07_assembly[kcuf3]/noiseless_rgf.npz"
+  },
+  "artifact_meta": {
+    "circuits": {
+      "path": "tasks/a07_assembly[kcuf3]/circuits.qpy",
+      "sha256": "300460eb6098b1df15e00df82c68a05e6ce9a8245f02be84f67583ec920f4c55",
+      "bytes": 349180,
+      "format": "qpy",
+      "n_circuits": 7
+    },
+    "circuit_stats": {
+      "path": "tasks/a07_assembly[kcuf3]/circuit_stats.json",
+      "sha256": "6a4b109197899b4b90b5a0560945823e11c252d087b03529c04210d2613a710f",
+      "bytes": 1600,
+      "format": "json"
+    },
+    "noiseless_rgf": {
+      "path": "tasks/a07_assembly[kcuf3]/noiseless_rgf.npz",
+      "sha256": "7cd4b45ac31c568c4c9b58b12710fa366e1a27a9f8117517ed02376b44c7b775",
+      "bytes": 1591,
+      "format": "npz",
+      "shapes": {
+        "rgf": [
+          6,
+          8
+        ],
+        "z": [
+          1,
+          7,
+          8
+        ],
+        "dt": [],
+        "center": []
+      }
+    }
+  }
+}
